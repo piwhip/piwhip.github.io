@@ -205,9 +205,6 @@ nav.s{padding:12px 0;background:rgba(6,6,8,.92);backdrop-filter:blur(20px);borde
 .rev-text{font-size:.875rem;color:rgba(240,240,239,.65);line-height:1.7;flex:1}
 .rev-src{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.65rem;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:auto}
 .rev-src::before{content:'';width:8px;height:8px;border-radius:50%;background:#00b341;flex-shrink:0}
-@media(max-width:900px){.rev-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
-
 /* ---- CONTACT GRID ---- */
 .cgrid{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center}
 
@@ -239,6 +236,52 @@ nav.s{padding:12px 0;background:rgba(6,6,8,.92);backdrop-filter:blur(20px);borde
 .ci{font-family:var(--mono);font-size:.76rem}
 .ci .cl{color:var(--muted);display:block;margin-bottom:2px}
 .ci .cv{color:rgba(240,240,239,.8)}
+
+/* ---- HERO STATS ---- */
+.hstats{display:flex;align-items:stretch;gap:0;margin:8px auto 60px;max-width:560px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
+.hst{flex:1;padding:18px 10px;text-align:center;position:relative}
+.hst:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border)}
+.hsc{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:900;color:var(--text);display:block;line-height:1;letter-spacing:-.03em}
+.hsl{font-size:.68rem;color:var(--muted);margin-top:5px;font-family:var(--mono);letter-spacing:.04em}
+
+/* ---- REVIEWS SLIDER ---- */
+.rev-overflow{overflow:hidden;border-radius:16px}
+.rev-slider{display:flex;transition:transform .45s cubic-bezier(.25,.46,.45,.94);will-change:transform;margin-top:52px}
+.rev-slide{flex:0 0 100%;padding:0;box-sizing:border-box}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px}
+.rev-arrow{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;outline:none;flex-shrink:0}
+.rev-arrow:hover{border-color:rgba(249,115,22,.4);color:var(--accent);background:rgba(249,115,22,.06)}
+.rev-arrow svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rev-dots{display:flex;gap:6px;align-items:center}
+.rev-dot{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .3s;border:none;outline:none}
+.rev-dot.on{background:var(--accent);width:22px;border-radius:4px}
+.rev-counter{font-family:var(--mono);font-size:.7rem;color:var(--muted);min-width:38px;text-align:center}
+
+/* ---- CONTACT FORM ---- */
+.form-sec{padding:0 0 0}
+.fcard{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:24px;padding:56px 64px;position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(249,115,22,.06),transparent 70%);border-radius:50%;pointer-events:none}
+.fgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.flabel{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.finput,.ftarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 15px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:none}
+.finput::placeholder,.ftarea::placeholder{color:var(--muted)}
+.finput:focus,.ftarea:focus{border-color:rgba(249,115,22,.45);box-shadow:0 0 0 3px rgba(249,115,22,.06)}
+.ftarea{height:110px;line-height:1.6}
+.frow{margin-bottom:16px}
+.fsbtn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:10px;background:var(--accent);color:#fff;font-size:.92rem;font-weight:700;border:none;cursor:pointer;transition:opacity .2s,transform .2s;margin-top:8px;width:100%}
+.fsbtn:hover{opacity:.88;transform:translateY(-1px)}
+.fhint{font-family:var(--mono);font-size:.65rem;color:var(--muted);margin-top:10px;text-align:center}
+.finfo-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.finfo-item:last-child{border-bottom:none}
+.fii{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.fit{font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:1px}
+.fiv{font-size:.88rem;color:rgba(240,240,239,.85)}
+.fsuccess{display:none;text-align:center;padding:48px 0}
+.fsuccess.show{display:block}
+.fsuccess-icon{font-size:3rem;display:block;margin-bottom:16px}
+.fsuccess h3{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:8px}
+.fsuccess p{color:var(--muted);font-size:.9rem}
+.fform-wrap.hide{display:none}
 
 /* ---- FOOTER ---- */
 footer{padding:26px 0;border-top:1px solid var(--border);position:relative;z-index:3}
@@ -299,6 +342,10 @@ footer{padding:26px 0;border-top:1px solid var(--border);position:relative;z-ind
   .cbtns{margin-bottom:28px}
   .cinfo{flex-direction:column;gap:12px}
   .rev-grid{grid-template-columns:1fr}
+  .hstats{max-width:100%}
+  .hsc{font-size:1.5rem}
+  .fcard{padding:28px 18px}
+  .fgrid{grid-template-columns:1fr;gap:28px}
   footer .fi{flex-direction:column;text-align:center;gap:8px}
 }
 </style>
@@ -338,6 +385,12 @@ footer{padding:26px 0;border-top:1px solid var(--border);position:relative;z-ind
     <div class="hero-btns">
       <a href="#projects" class="bp">Смотреть проекты →</a>
       <a href="#contact" class="bg">Обсудить задачу</a>
+    </div>
+    <div class="hstats">
+      <div class="hst"><span class="hsc" data-count="5">0</span><span class="hsl">проектов</span></div>
+      <div class="hst"><span class="hsc" data-count="5" data-post="★">0</span><span class="hsl">отзывов</span></div>
+      <div class="hst"><span class="hsc" data-text="<1ч">—</span><span class="hsl">ответ</span></div>
+      <div class="hst"><span class="hsc" data-count="2" data-post="+">0</span><span class="hsl">года опыта</span></div>
     </div>
   </div>
   <div class="ticker-wrap">
@@ -617,85 +670,133 @@ footer{padding:26px 0;border-top:1px solid var(--border);position:relative;z-ind
     <div class="slabel">Отзывы с Kwork</div>
     <h2 class="stitle rv">Что говорят клиенты</h2>
     <p class="ssub rv">5 положительных отзывов · 0 отрицательных</p>
-    <div class="rev-grid">
+    <div class="rev-overflow">
+      <div class="rev-slider" id="revSlider">
 
-      <div class="rev-card rv">
-        <div class="rev-top">
-          <div class="rev-av" style="background:rgba(244,114,182,.15);color:#f472b6">P</div>
-          <div class="rev-info">
-            <div class="rev-name">PAFFKA</div>
-            <div class="rev-date">15 дней назад</div>
+        <div class="rev-slide"><div class="rev-card">
+          <div class="rev-top">
+            <div class="rev-av" style="background:rgba(244,114,182,.15);color:#f472b6">P</div>
+            <div class="rev-info"><div class="rev-name">PAFFKA</div><div class="rev-date">15 дней назад</div></div>
+            <div class="rev-stars">★★★★★</div>
           </div>
-          <div class="rev-stars">★★★★★</div>
-        </div>
-        <div class="rev-badge">Разработка бота в Telegram</div>
-        <p class="rev-text">«Была задача сделать Инфо-Бота, продавец справился на УРА!! Уловил ход мыслей и разложил всё по полочкам — насмотреться не могу. Однозначно рекомендую Льва как отличного программиста, который превзошёл мои ожидания!»</p>
-        <div class="rev-src">Проверенный отзыв · kwork.ru</div>
-      </div>
+          <div class="rev-badge">Разработка бота в Telegram</div>
+          <p class="rev-text">«Была задача сделать Инфо-Бота, продавец справился на УРА!! Уловил ход мыслей и разложил всё по полочкам — насмотреться не могу. Однозначно рекомендую Льва как отличного программиста, который превзошёл мои ожидания!»</p>
+          <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        </div></div>
 
-      <div class="rev-card rv">
-        <div class="rev-top">
-          <div class="rev-av" style="background:rgba(251,191,36,.12);color:#fbbf24">Y</div>
-          <div class="rev-info">
-            <div class="rev-name">yoshihatemyself</div>
-            <div class="rev-date">20 дней назад</div>
+        <div class="rev-slide"><div class="rev-card">
+          <div class="rev-top">
+            <div class="rev-av" style="background:rgba(251,191,36,.12);color:#fbbf24">Y</div>
+            <div class="rev-info"><div class="rev-name">yoshihatemyself</div><div class="rev-date">20 дней назад</div></div>
+            <div class="rev-stars">★★★★★</div>
           </div>
-          <div class="rev-stars">★★★★★</div>
-        </div>
-        <div class="rev-badge">Разработка бота в Telegram</div>
-        <p class="rev-text">«Всё отлично, продавец вежливый, быстро ответил и сделал работу.»</p>
-        <div class="rev-src">Проверенный отзыв · kwork.ru</div>
-      </div>
+          <div class="rev-badge">Разработка бота в Telegram</div>
+          <p class="rev-text">«Всё отлично, продавец вежливый, быстро ответил и сделал работу.»</p>
+          <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        </div></div>
 
-      <div class="rev-card rv">
-        <div class="rev-top">
-          <div class="rev-av" style="background:rgba(52,211,153,.12);color:#34d399">G</div>
-          <div class="rev-info">
-            <div class="rev-name">gainutdinovarsla</div>
-            <div class="rev-date">23 дня назад</div>
+        <div class="rev-slide"><div class="rev-card">
+          <div class="rev-top">
+            <div class="rev-av" style="background:rgba(52,211,153,.12);color:#34d399">G</div>
+            <div class="rev-info"><div class="rev-name">gainutdinovarsla</div><div class="rev-date">23 дня назад</div></div>
+            <div class="rev-stars">★★★★★</div>
           </div>
-          <div class="rev-stars">★★★★★</div>
-        </div>
-        <div class="rev-badge">Создание ТГ бота</div>
-        <p class="rev-text">«Нужно было сделать срочно бота в Telegram — человек сделал всё за 3 часа, всё работает. Советую!»</p>
-        <div class="rev-src">Проверенный отзыв · kwork.ru</div>
-      </div>
+          <div class="rev-badge">Создание ТГ бота</div>
+          <p class="rev-text">«Нужно было сделать срочно бота в Telegram — человек сделал всё за 3 часа, всё работает. Советую!»</p>
+          <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        </div></div>
 
-      <div class="rev-card rv">
-        <div class="rev-top">
-          <div class="rev-av" style="background:rgba(56,189,248,.12);color:#38bdf8">S</div>
-          <div class="rev-info">
-            <div class="rev-name">shweppyk</div>
-            <div class="rev-date">24 дня назад</div>
+        <div class="rev-slide"><div class="rev-card">
+          <div class="rev-top">
+            <div class="rev-av" style="background:rgba(56,189,248,.12);color:#38bdf8">S</div>
+            <div class="rev-info"><div class="rev-name">shweppyk</div><div class="rev-date">24 дня назад</div></div>
+            <div class="rev-stars">★★★★★</div>
           </div>
-          <div class="rev-stars">★★★★★</div>
-        </div>
-        <div class="rev-badge">Разработка бота в Telegram</div>
-        <p class="rev-text">«Спасибо, быстро разработал полностью рабочего бота под ТЗ.»</p>
-        <div class="rev-src">Проверенный отзыв · kwork.ru</div>
-      </div>
+          <div class="rev-badge">Разработка бота в Telegram</div>
+          <p class="rev-text">«Спасибо, быстро разработал полностью рабочего бота под ТЗ.»</p>
+          <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        </div></div>
 
-      <div class="rev-card rv">
-        <div class="rev-top">
-          <div class="rev-av" style="background:rgba(167,139,250,.12);color:#a78bfa">T</div>
-          <div class="rev-info">
-            <div class="rev-name">Tracksy</div>
-            <div class="rev-date">26 дней назад</div>
+        <div class="rev-slide"><div class="rev-card">
+          <div class="rev-top">
+            <div class="rev-av" style="background:rgba(167,139,250,.12);color:#a78bfa">T</div>
+            <div class="rev-info"><div class="rev-name">Tracksy</div><div class="rev-date">26 дней назад</div></div>
+            <div class="rev-stars">★★★★★</div>
           </div>
-          <div class="rev-stars">★★★★★</div>
+          <div class="rev-badge">СЕО-копирайтинг</div>
+          <p class="rev-text">«Очень хороший, вежливый продавец! Отлично написан текст, соответствует ТЗ. Очень быстро, спасибо.»</p>
+          <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        </div></div>
+
+      </div>
+    </div>
+    <div class="rev-nav">
+      <button class="rev-arrow" id="revPrev" aria-label="Назад"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="rev-dots" id="revDots"></div>
+      <span class="rev-counter" id="revCounter">1 / 5</span>
+      <button class="rev-arrow" id="revNext" aria-label="Вперёд"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="https://kwork.ru/user/piwhip" target="_blank" class="bg">Все отзывы на Kwork →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-sec">
+  <div class="wrap">
+    <div class="fcard rv">
+      <div class="fgrid">
+        <div>
+          <div class="slabel" style="margin-bottom:10px">Написать мне</div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin-bottom:10px">Есть идея?<br><span style="color:var(--accent)">Расскажи.</span></h2>
+          <p style="font-size:.9rem;color:var(--muted);margin-bottom:28px;line-height:1.7">Опиши задачу — отвечу в Telegram в течение часа.</p>
+          <div class="fform-wrap" id="fFormWrap">
+            <div class="frow">
+              <label class="flabel" for="fName">Имя или ник</label>
+              <input class="finput" id="fName" type="text" placeholder="Алексей" autocomplete="off">
+            </div>
+            <div class="frow">
+              <label class="flabel" for="fContact">Ваш контакт (необязательно)</label>
+              <input class="finput" id="fContact" type="text" placeholder="@username или email">
+            </div>
+            <div class="frow">
+              <label class="flabel" for="fMsg">Сообщение</label>
+              <textarea class="ftarea" id="fMsg" placeholder="Нужен бот для рассылки, который умеет..."></textarea>
+            </div>
+            <button class="fsbtn" id="fSubmit">✈️ Отправить в Telegram</button>
+            <p class="fhint">Откроется Telegram с готовым сообщением</p>
+          </div>
+          <div class="fsuccess" id="fSuccess">
+            <span class="fsuccess-icon">🚀</span>
+            <h3>Сообщение готово!</h3>
+            <p>Telegram открылся с вашим сообщением.<br>Жду вас там!</p>
+            <button onclick="document.getElementById('fSuccess').classList.remove('show');document.getElementById('fFormWrap').classList.remove('hide')" style="margin-top:20px;padding:10px 24px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:.85rem">Отправить ещё</button>
+          </div>
         </div>
-        <div class="rev-badge">СЕО-копирайтинг</div>
-        <p class="rev-text">«Очень хороший, вежливый продавец! Отлично написан текст, соответствует ТЗ. Очень быстро, спасибо.»</p>
-        <div class="rev-src">Проверенный отзыв · kwork.ru</div>
+        <div class="finfo">
+          <div class="finfo-item">
+            <div class="fii" style="background:rgba(41,182,246,.1)">✈️</div>
+            <div><span class="fit">Telegram</span><span class="fiv">@gustaflmao</span></div>
+          </div>
+          <div class="finfo-item">
+            <div class="fii" style="background:rgba(249,115,22,.1)">✉️</div>
+            <div><span class="fit">Email</span><span class="fiv">leon2324830@gmail.com</span></div>
+          </div>
+          <div class="finfo-item">
+            <div class="fii" style="background:rgba(52,211,153,.1)">💼</div>
+            <div><span class="fit">Kwork</span><span class="fiv">kwork.ru/user/piwhip</span></div>
+          </div>
+          <div class="finfo-item">
+            <div class="fii" style="background:rgba(251,191,36,.1)">⚡</div>
+            <div><span class="fit">Скорость ответа</span><span class="fiv">Обычно &lt; 1 часа</span></div>
+          </div>
+          <div class="finfo-item" style="border:none">
+            <div class="fii" style="background:rgba(167,139,250,.1)">🌍</div>
+            <div><span class="fit">Часовой пояс</span><span class="fiv">МСК (UTC+3)</span></div>
+          </div>
+        </div>
       </div>
-
-      <div class="rev-card rv" style="border-color:rgba(249,115,22,.15);background:rgba(249,115,22,.04);display:flex;align-items:center;justify-content:center;text-align:center;gap:16px;flex-direction:column">
-        <div style="font-size:2rem">💼</div>
-        <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800">5 отзывов</div>
-        <div style="font-size:.85rem;color:var(--muted)">Все положительные, 0 отрицательных</div>
-        <a href="https://kwork.ru/user/piwhip" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);color:var(--accent);font-size:.85rem;font-weight:600;transition:all .2s">Смотреть на Kwork →</a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -854,6 +955,85 @@ const so=new IntersectionObserver(es=>{
   });
 },{threshold:.1});
 document.querySelectorAll('.pgrid,.schips').forEach(el=>so.observe(el));
+
+// HERO STATS COUNTER
+(function(){
+  const els=document.querySelectorAll('.hsc[data-count]');
+  let done=false;
+  function run(){
+    if(done)return; done=true;
+    els.forEach(el=>{
+      const target=+el.dataset.count, post=el.dataset.post||'';
+      let cur=0;
+      const step=Math.ceil(target/30);
+      const t=setInterval(()=>{
+        cur=Math.min(cur+step,target);
+        el.textContent=cur+post;
+        if(cur>=target)clearInterval(t);
+      },40);
+    });
+    document.querySelectorAll('.hsc[data-text]').forEach(el=>{
+      setTimeout(()=>{el.textContent=el.dataset.text},400);
+    });
+  }
+  const obs=new IntersectionObserver(es=>{if(es[0].isIntersecting)run()},{threshold:.3});
+  const stats=document.querySelector('.hstats');
+  if(stats)obs.observe(stats); else run();
+})();
+
+// REVIEWS SLIDER
+(function(){
+  const slider=document.getElementById('revSlider');
+  if(!slider)return;
+  const slides=slider.children;
+  const dotsWrap=document.getElementById('revDots');
+  const counter=document.getElementById('revCounter');
+  const total=slides.length;
+  let cur=0, timer;
+
+  Array.from(slides).forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='rev-dot'+(i===0?' on':'');
+    d.setAttribute('aria-label','Отзыв '+(i+1));
+    d.addEventListener('click',()=>go(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function go(n){
+    cur=(n+total)%total;
+    slider.style.transform='translateX(-'+(cur*100)+'%)';
+    document.querySelectorAll('.rev-dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
+    if(counter)counter.textContent=(cur+1)+' / '+total;
+    clearInterval(timer);
+    timer=setInterval(()=>go(cur+1),5000);
+  }
+
+  document.getElementById('revPrev').addEventListener('click',()=>go(cur-1));
+  document.getElementById('revNext').addEventListener('click',()=>go(cur+1));
+  timer=setInterval(()=>go(cur+1),5000);
+
+  let tx=0;
+  slider.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+  slider.addEventListener('touchend',e=>{
+    const dx=tx-e.changedTouches[0].clientX;
+    if(Math.abs(dx)>40)go(cur+(dx>0?1:-1));
+  },{passive:true});
+})();
+
+// CONTACT FORM → TELEGRAM
+document.getElementById('fSubmit').addEventListener('click',function(){
+  const name=document.getElementById('fName').value.trim();
+  const contact=document.getElementById('fContact').value.trim();
+  const msg=document.getElementById('fMsg').value.trim();
+  if(!msg){document.getElementById('fMsg').focus();return;}
+  let text='📩 Новое сообщение с сайта\n\n';
+  if(name) text+='👤 Имя: '+name+'\n';
+  if(contact) text+='📬 Контакт: '+contact+'\n';
+  text+='\n💬 '+msg;
+  window.open('https://t.me/gustaflmao?text='+encodeURIComponent(text),'_blank');
+  document.getElementById('fFormWrap').classList.add('hide');
+  document.getElementById('fSuccess').classList.add('show');
+});
 </script>
 </body>
 </html>
